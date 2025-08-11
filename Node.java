@@ -50,12 +50,11 @@ public class Node {
 	public String toString() {
 		return data + "";
 	}
-	public void addChild(Node newNode) {
-		if (leftNode ==null)
-			leftNode = newNode;
-		else 
-			rightNode = newNode;
-		
+	public void addLeftChild(Node newNode) {
+		leftNode = newNode;
+	}
+	public void addRightChild(Node newNode) {
+		rightNode = newNode;
 	}
 	
 	public int getDegree() {
