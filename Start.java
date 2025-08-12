@@ -3,16 +3,18 @@ public class Start {
 
 	public static void main(String[] args) {
 		Node raiz = new Node(2);
+		BinaryTree arvoreExemplo 
+		= new BinaryTree(raiz);	
+		
 		Node um = new Node(1);
 		Node cinco = new Node(5);
 		Node oito = new Node(8);
-		BinaryTree arvoreExemplo 
-		= new BinaryTree(raiz);	
 		raiz.addLeftChild(um);
-		raiz.addRightChild(cinco);
-		
+		raiz.addRightChild(cinco);		
 		cinco.addRightChild(oito);
-		cinco.addLeftChild(new Node(3));
+		Node tres = new Node(3);
+		cinco.addLeftChild(tres);
+		oito.addRightChild(new Node(20));
 		
 		System.out.println("Pré ordem");
 		arvoreExemplo.printPreOrder();
@@ -22,5 +24,12 @@ public class Start {
 		System.out.println("");
 		System.out.println("Pós ordem");
 		arvoreExemplo.printPostOrder();
+		
+		System.out.println("\nNúmero de nós da árvore: " + arvoreExemplo.getSize());
+		
+		System.out.println("\nAltura da árvore: " + arvoreExemplo.height()); 
+		System.out.println("\nÉ balanceada: " + arvoreExemplo.isBalanced());
+
+		
 	}
 }

@@ -18,12 +18,14 @@ public class Node {
 	}
 	public void setLeftNode(Node leftNode) {
 		this.leftNode = leftNode;
+		leftNode.dadNode = this;
 	}
 	public Node getRightNode() {
 		return rightNode;
 	}
 	public void setRightNode(Node rightNode) {
 		this.rightNode = rightNode;
+		rightNode.dadNode = this;
 	}
 	public Node(int data) {
 		this.data = data;
@@ -52,9 +54,11 @@ public class Node {
 	}
 	public void addLeftChild(Node newNode) {
 		leftNode = newNode;
+		leftNode.dadNode = this;
 	}
 	public void addRightChild(Node newNode) {
 		rightNode = newNode;
+		rightNode.dadNode = this;
 	}
 	
 	public int getDegree() {
